@@ -10,7 +10,7 @@
 # Installation
 
 ```bash
-composer require kebal/laravel-atlas
+composer require kebalicious/laravel-atlas
 ```
 
 If you are using autodiscovery in Laravel, it should work just nice.

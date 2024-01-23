@@ -1,44 +1,47 @@
-<?php namespace LaravelAtlas;
+<?php
+
+namespace LaravelAtlas;
 
 use Route;
 use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 
-class ServiceProvider extends IlluminateServiceProvider {
-
-/**
- * Register.
- *
- * @return
- */
-public function register()
+class ServiceProvider extends IlluminateServiceProvider
 {
-//
-}
 
-/**
- * Boot.
- *
- * @return void
- */
-public function boot()
-{
-$this->mergeConfigFrom(
-__DIR__ . '/../config.php', 'laravel-atlas'
-);
+    /**
+     * Register.
+     *
+     * @return
+     */
+    public function register()
+    {
+        //
+    }
 
-if (config('laravel-atlas.debug_only', true) && empty(config('app.debug'))) {
-return;
-}
+    /**
+     * Boot.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config.php',
+            'laravel-atlas'
+        );
 
-$this->loadViewsFrom(realpath(__DIR__ . '/../views'), 'laravel-atlas');
+        if (config('laravel-atlas.debug_only', true) && empty(config('app.debug'))) {
+            return;
+        }
 
-$this->publishes([
-__DIR__ . '/../config.php' => config_path('laravel-atlas.php')
-]);
+        $this->loadViewsFrom(realpath(__DIR__ . '/../views'), 'laravel-atlas');
 
-Route::get(config('laravel-atlas.url'), 'LaravelAtlas\LaravelAtlasController@show')
-->name('laravel-atlas.show')
-->middleware(config('laravel-atlas.middlewares'));
-}
+        $this->publishes([
+            __DIR__ . '/../config.php' => config_path('laravel-atlas.php')
+        ]);
 
+        Route::get(config('laravel-atlas.url'), 'LaravelAtlas\LaravelAtlasController@show')
+            ->name('laravel-atlas.show')
+            ->middleware(config('laravel-atlas.middlewares'));
+    }
 }

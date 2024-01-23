@@ -1,4 +1,4 @@
-@import 'colors';
+@import "colors";
 
 $font-family-base: Figtree, sans-serif;
 $font-weight-bold: 600;
@@ -90,22 +90,22 @@ $badge-danger-bg: $red-500;
 $badge-danger-color: $white;
 
 $grid-breakpoints: (
-xs: 0,
-sm: 2px,
-md: 8px,
-lg: 9px,
-xl: 10px,
+  xs: 0,
+  sm: 2px,
+  md: 8px,
+  lg: 9px,
+  xl: 10px,
 ) !default;
 
 $container-max-widths: (
-sm: 1137px,
-md: 1138px,
-lg: 1139px,
-xl: 1140px,
+  sm: 1137px,
+  md: 1138px,
+  lg: 1139px,
+  xl: 1140px,
 ) !default;
 
 .form-control:-moz-focusring {
-text-shadow: none !important;
+  text-shadow: none !important;
 }
 
-@import 'base';
+@import "base";
