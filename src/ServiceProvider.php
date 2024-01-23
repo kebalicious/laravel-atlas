@@ -4,7 +4,7 @@ namespace LaravelAtlas;
 
 use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 
-class AtlasServiceProvider extends IlluminateServiceProvider
+class ServiceProvider extends IlluminateServiceProvider
 {
     /**
      * Register.
