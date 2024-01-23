@@ -24,11 +24,11 @@ LaravelAtlas\ServiceProvider::class,
 Next, publish the config:
 
 ```bash
-php artisan vendor:publish --provider="PrettyRoutes\ServiceProvider"
+php artisan vendor:publish --provider="LaravelAtlas\ServiceProvider"
 ```
 
 To access your routes: `your-domain/routes`
 
 If `/routes` not working, ensure that you have included the provider within the same area as all your package providers (before all your app's providers) to ensure it takes priority.
 
-By default pretty routes only enables itself when `APP_DEBUG` env is true. You can configure this on the published config as above, or add any custom middlewares.
+By default Laravel Atlas only enables itself when `APP_DEBUG` env is true. You can configure this on the published config as above, or add any custom middlewares.

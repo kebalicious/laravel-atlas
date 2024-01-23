@@ -23,5 +23,10 @@
         "LaravelAtlas\\ServiceProvider"
       ]
     }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "Kebalicious\\LaravelAtlas\\AtlasServiceProvider::postAutoloadDump"
+    ]
   }
 }
