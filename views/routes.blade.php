@@ -16,7 +16,6 @@
 
 <body>
     <div id="atlas">
-
         <div class="container mb-5">
             <div class="d-flex align-items-center justify-content-between py-4 header">
                 <div class="d-flex align-items-center logo">
@@ -43,7 +42,7 @@
                         </svg>Refresh
                     </button>
 
-                    <button class="btn btn-muted d-flex align-items-center py-2" v-on:click.prevent="clearEntries" title="Clear entries">
+                    <button class="btn btn-muted d-flex align-items-center py-2" onclick="openFullscreen();" title="Clear entries">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon mr-2" fill="currentColor">
                             <path d="M344 0H488c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-39-39-87 87c-9.4 9.4-24.6 9.4-33.9 0l-32-32c-9.4-9.4-9.4-24.6 0-33.9l87-87L327 41c-6.9-6.9-8.9-17.2-5.2-26.2S334.3 0 344 0zM168 512H24c-13.3 0-24-10.7-24-24V344c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2l39 39 87-87c9.4-9.4 24.6-9.4 33.9 0l32 32c9.4 9.4 9.4 24.6 0 33.9l-87 87 39 39c6.9 6.9 8.9 17.2 5.2 26.2s-12.5 14.8-22.2 14.8z" />
                         </svg>Go to Fullscreen
@@ -125,6 +124,30 @@
         }
 
         hideEmptyDomainColumn();
+
+        // Fullscreen
+
+        var elem = document.documentElement;
+
+        function openFullscreen() {
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            }
+        }
+
+        function closeFullscreen() {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        }
     </script>
 </body>
 

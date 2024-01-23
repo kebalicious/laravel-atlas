@@ -43,21 +43,16 @@ class ServiceProvider extends IlluminateServiceProvider
             ->name('laravel-atlas.show')
             ->middleware(config('laravel-atlas.middlewares'));
 
-        // Add the following code to copy assets during the post-autoload-dump event
         $this->app->booted(function () {
-            // Define the source and destination paths
-            $sourcePath = base_path('vendor/kebalicious/laravel-atlas/public');;
+            $sourcePath = base_path('vendor/kebalicious/laravel-atlas/resources');;
             $destinationPath = public_path('/vendor/laravel-atlas');
 
-            // Copy the files using a recursive directory copy function
             $this->recursiveCopy($sourcePath, $destinationPath);
 
-            // Optional: Display a message to indicate successful copying
-            echo "LaravelAtlas assets have been successfully copied to the Laravel public folder.\n";
+            // echo "LaravelAtlas assets have been successfully copied to the Laravel public folder.\n";
         });
     }
 
-    // Recursive directory copy function
     protected function recursiveCopy($source, $destination)
     {
         $directory = opendir($source);
