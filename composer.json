@@ -1,0 +1,27 @@
+{
+  "name": "kebalicious/laravel-atlas",
+  "description": "Laravel Atlas, pretty routes viewer for Laravel 5+",
+  "require": {
+    "laravel/framework": "5.*|6.*|7.*|8.*|^9.0|^10.0"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kebalicious",
+      "email": "kebalicious@yahoo.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "LaravelAtlas\\": "src"
+    }
+  },
+  "minimum-stability": "dev",
+  "extra": {
+    "laravel": {
+      "providers": [
+        "LaravelAtlas\\ServiceProvider"
+      ]
+    }
+  }
+}
