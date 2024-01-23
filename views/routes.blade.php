@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="shortcut icon" href="{{ asset('/vendor/laravel-atlas/logo.ico') }}">
+    <link rel="shortcut icon" href="{{ asset('/vendor/laravel-atlas/favico.ico') }}">
     <meta name="robots" content="noindex, nofollow">
     <title>Routes List {{ config('app.name') ? ' - ' . config('app.name') : '' }}</title>
     <link rel="preconnect" href="https://fonts.bunny.net">
