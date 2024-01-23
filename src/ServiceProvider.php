@@ -58,18 +58,18 @@ class ServiceProvider extends IlluminateServiceProvider
     }
 
     // Recursive directory copy function
-    protected function recursiveCopy($source, $destination)
+    protected function recursiveCopy($sourcePath, $destinationPath)
     {
-        $directory = opendir($source);
+        $directory = opendir($sourcePath);
 
-        if (!is_dir($destination)) {
-            mkdir($destination, 0755, true);
+        if (!is_dir($destinationPath)) {
+            mkdir($destinationPath, 0755, true);
         }
 
         while ($file = readdir($directory)) {
             if ($file !== "." && $file !== "..") {
-                $sourceFile = $source . '/' . $file;
-                $destinationFile = $destination . '/' . $file;
+                $sourceFile = $sourcePath . '/' . $file;
+                $destinationFile = $destinationPath . '/' . $file;
 
                 if (is_dir($sourceFile)) {
                     $this->recursiveCopy($sourceFile, $destinationFile);
