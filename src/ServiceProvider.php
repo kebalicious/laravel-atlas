@@ -46,7 +46,7 @@ class ServiceProvider extends IlluminateServiceProvider
         // Add the following code to copy assets during the post-autoload-dump event
         $this->app->booted(function () {
             // Define the source and destination paths
-            $sourcePath = __DIR__ . '/public';
+            $sourcePath = base_path('vendor/kebalicious/laravel-atlas/public');;
             $destinationPath = public_path('/vendor/laravel-atlas');
 
             // Copy the files using a recursive directory copy function
@@ -58,18 +58,18 @@ class ServiceProvider extends IlluminateServiceProvider
     }
 
     // Recursive directory copy function
-    protected function recursiveCopy($sourcePath, $destinationPath)
+    protected function recursiveCopy($source, $destination)
     {
-        $directory = opendir($sourcePath);
+        $directory = opendir($source);
 
-        if (!is_dir($destinationPath)) {
-            mkdir($destinationPath, 0755, true);
+        if (!is_dir($destination)) {
+            mkdir($destination, 0755, true);
         }
 
         while ($file = readdir($directory)) {
             if ($file !== "." && $file !== "..") {
-                $sourceFile = $sourcePath . '/' . $file;
-                $destinationFile = $destinationPath . '/' . $file;
+                $sourceFile = $source . '/' . $file;
+                $destinationFile = $destination . '/' . $file;
 
                 if (is_dir($sourceFile)) {
                     $this->recursiveCopy($sourceFile, $destinationFile);
