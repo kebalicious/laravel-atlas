@@ -2,6 +2,7 @@
 
 namespace LaravelAtlas;
 
+use Route;
 use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 
 class ServiceProvider extends IlluminateServiceProvider
