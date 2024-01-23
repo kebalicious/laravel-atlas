@@ -5,7 +5,7 @@
 
 </div>
 
-![Laravel Atlas](https://raw.githubusercontent.com/kebalicious/laravel-atlas/master/screenshot.png)
+![Laravel Atlas](https://raw.githubusercontent.com/kebalicious/laravel-atlas/master/sample.png)
 
 # Installation
 
