@@ -46,7 +46,7 @@ class AtlasServiceProvider extends IlluminateServiceProvider
         $this->app->booted(function () {
             // Define the source and destination paths
             $sourcePath = __DIR__ . '/public';
-            $destinationPath = public_path();
+            $destinationPath = public_path('/vendor/laravel-atlas');
 
             // Copy the files using a recursive directory copy function
             $this->recursiveCopy($sourcePath, $destinationPath);
